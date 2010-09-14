@@ -1,0 +1,362 @@
+<p>
+	Le club compte actuellement <b><{$nbMembres}></b> adhérents.
+</p>
+<p style="text-align:center;">
+	<img src="cache/repartition-homme-femme.png" alt="Satistique homme/femme des licenciés du club" title="Satistique homme/femme des licenciés du club" />
+	<img src="cache/repartition-age.png" alt="Satistique par age des licenciés du club" title="Satistique par age des licenciés du club" />
+</p>
+<p>
+<span style="color:red;">Simple</span> <span style="color:green;">Double</span> <span style="color:blue;">Mixte</span>
+</p>
+<table class="outer" style="text-align:center;">
+	<tr>
+		<th colspan="9" style="text-align:center;">Répartition des adhérents par catégorie</th>
+	</tr>
+	<tr>
+		<th style="text-align:center;">Série</th>
+		<th style="text-align:center;">Poussin</th>
+		<th style="text-align:center;">Benjamin</th>
+		<th style="text-align:center;">Minime</th>
+		<th style="text-align:center;">Cadet</th>
+		<th style="text-align:center;">Junior</th>
+		<th style="text-align:center;">Senior</th>
+		<th style="text-align:center;">Vétéran</th>
+		<th style="text-align:center;">Total</th>
+	</tr>
+	<{section name=statMembreId loop=$statMembreSimple}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td><{$statMembreSimple[statMembreId].statmembres_cat}></td>
+		<td>
+			<{if $statMembreSimple[statMembreId].statmembres_poussin}>
+				<a style="color:red; font-weight:bold;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>&amp;cat=Poussin">
+			<{else}>
+				<span style="color:red;">
+			<{/if}>
+
+				<{$statMembreSimple[statMembreId].statmembres_poussin}>
+
+			<{if $statMembreSimple[statMembreId].statmembres_poussin}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreDouble[statMembreId].statmembres_poussin}>
+				<a style="color:green; font-weight:bold;" href="membre-class-double.php?class=<{$statMembreDouble[statMembreId].statmembres_cat}>&amp;cat=Poussin">
+			<{else}>
+				<span style="color:green;">
+			<{/if}>
+
+				<{$statMembreDouble[statMembreId].statmembres_poussin}>
+
+			<{if $statMembreDouble[statMembreId].statmembres_poussin}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreMixte[statMembreId].statmembres_poussin}>
+				<a style="color:blue; font-weight:bold;" href="membre-class-mixte.php?class=<{$statMembreMixte[statMembreId].statmembres_cat}>&amp;cat=Poussin">
+			<{else}>
+				<span style="color:blue;">
+			<{/if}>
+
+				<{$statMembreMixte[statMembreId].statmembres_poussin}>
+
+			<{if $statMembreMixte[statMembreId].statmembres_poussin}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+		</td>
+		<td>
+			<{if $statMembreSimple[statMembreId].statmembres_benjamin}>
+				<a style="color:red; font-weight:bold;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>&amp;cat=Benjamin">
+			<{else}>
+				<span style="color:red;">
+			<{/if}>
+
+				<{$statMembreSimple[statMembreId].statmembres_benjamin}>
+
+			<{if $statMembreSimple[statMembreId].statmembres_benjamin}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreDouble[statMembreId].statmembres_benjamin}>
+				<a style="color:green; font-weight:bold;" href="membre-class-double.php?class=<{$statMembreDouble[statMembreId].statmembres_cat}>&amp;cat=Benjamin">
+			<{else}>
+				<span style="color:green;">
+			<{/if}>
+
+				<{$statMembreDouble[statMembreId].statmembres_benjamin}>
+
+			<{if $statMembreDouble[statMembreId].statmembres_benjamin}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreMixte[statMembreId].statmembres_benjamin}>
+				<a style="color:blue; font-weight:bold;" href="membre-class-mixte.php?class=<{$statMembreMixte[statMembreId].statmembres_cat}>&amp;cat=Benjamin">
+			<{else}>
+				<span style="color:blue;">
+			<{/if}>
+
+				<{$statMembreMixte[statMembreId].statmembres_benjamin}>
+
+			<{if $statMembreMixte[statMembreId].statmembres_benjamin}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+		</td>
+		<td>
+			<{if $statMembreSimple[statMembreId].statmembres_minime}>
+				<a style="color:red; font-weight:bold;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>&amp;cat=Minime">
+			<{else}>
+				<span style="color:red;">
+			<{/if}>
+
+				<{$statMembreSimple[statMembreId].statmembres_minime}>
+
+			<{if $statMembreSimple[statMembreId].statmembres_minime}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreDouble[statMembreId].statmembres_minime}>
+				<a style="color:green; font-weight:bold;" href="membre-class-double.php?class=<{$statMembreDouble[statMembreId].statmembres_cat}>&amp;cat=Minime">
+			<{else}>
+				<span style="color:green;">
+			<{/if}>
+
+				<{$statMembreDouble[statMembreId].statmembres_minime}>
+
+			<{if $statMembreDouble[statMembreId].statmembres_minime}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreMixte[statMembreId].statmembres_minime}>
+				<a style="color:blue; font-weight:bold;" href="membre-class-mixte.php?class=<{$statMembreMixte[statMembreId].statmembres_cat}>&amp;cat=Minime">
+			<{else}>
+				<span style="color:blue;">
+			<{/if}>
+
+				<{$statMembreMixte[statMembreId].statmembres_minime}>
+
+			<{if $statMembreMixte[statMembreId].statmembres_minime}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+		</td>
+		<td>
+			<{if $statMembreSimple[statMembreId].statmembres_cadet}>
+				<a style="color:red; font-weight:bold;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>&amp;cat=Cadet">
+			<{else}>
+				<span style="color:red;">
+			<{/if}>
+
+				<{$statMembreSimple[statMembreId].statmembres_cadet}>
+
+			<{if $statMembreSimple[statMembreId].statmembres_cadet}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreDouble[statMembreId].statmembres_cadet}>
+				<a style="color:green; font-weight:bold;" href="membre-class-double.php?class=<{$statMembreDouble[statMembreId].statmembres_cat}>&amp;cat=Cadet">
+			<{else}>
+				<span style="color:green;">
+			<{/if}>
+
+				<{$statMembreDouble[statMembreId].statmembres_cadet}>
+
+			<{if $statMembreDouble[statMembreId].statmembres_cadet}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreMixte[statMembreId].statmembres_cadet}>
+				<a style="color:blue; font-weight:bold;" href="membre-class-mixte.php?class=<{$statMembreMixte[statMembreId].statmembres_cat}>&amp;cat=Cadet">
+			<{else}>
+				<span style="color:blue;">
+			<{/if}>
+
+				<{$statMembreMixte[statMembreId].statmembres_cadet}>
+
+			<{if $statMembreMixte[statMembreId].statmembres_cadet}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+		</td>
+		<td>
+			<{if $statMembreSimple[statMembreId].statmembres_junior}>
+				<a style="color:red; font-weight:bold;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>&amp;cat=Junior">
+			<{else}>
+				<span style="color:red;">
+			<{/if}>
+
+				<{$statMembreSimple[statMembreId].statmembres_junior}>
+
+			<{if $statMembreSimple[statMembreId].statmembres_junior}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreDouble[statMembreId].statmembres_junior}>
+				<a style="color:green; font-weight:bold;" href="membre-class-double.php?class=<{$statMembreDouble[statMembreId].statmembres_cat}>&amp;cat=Junior">
+			<{else}>
+				<span style="color:green;">
+			<{/if}>
+
+				<{$statMembreDouble[statMembreId].statmembres_junior}>
+
+			<{if $statMembreDouble[statMembreId].statmembres_junior}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreMixte[statMembreId].statmembres_junior}>
+				<a style="color:blue; font-weight:bold;" href="membre-class-mixte.php?class=<{$statMembreMixte[statMembreId].statmembres_cat}>&amp;cat=Junior">
+			<{else}>
+				<span style="color:blue;">
+			<{/if}>
+
+				<{$statMembreMixte[statMembreId].statmembres_junior}>
+
+			<{if $statMembreMixte[statMembreId].statmembres_junior}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+		</td>
+		<td>
+			<{if $statMembreSimple[statMembreId].statmembres_senior}>
+				<a style="color:red; font-weight:bold;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>&amp;cat=Senior">
+			<{else}>
+				<span style="color:red;">
+			<{/if}>
+
+				<{$statMembreSimple[statMembreId].statmembres_senior}>
+
+			<{if $statMembreSimple[statMembreId].statmembres_senior}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreDouble[statMembreId].statmembres_senior}>
+				<a style="color:green; font-weight:bold;" href="membre-class-double.php?class=<{$statMembreDouble[statMembreId].statmembres_cat}>&amp;cat=Senior">
+			<{else}>
+				<span style="color:green;">
+			<{/if}>
+
+				<{$statMembreDouble[statMembreId].statmembres_senior}>
+
+			<{if $statMembreDouble[statMembreId].statmembres_senior}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreMixte[statMembreId].statmembres_senior}>
+				<a style="color:blue; font-weight:bold;" href="membre-class-mixte.php?class=<{$statMembreMixte[statMembreId].statmembres_cat}>&amp;cat=Senior">
+			<{else}>
+				<span style="color:blue;">
+			<{/if}>
+
+				<{$statMembreMixte[statMembreId].statmembres_senior}>
+
+			<{if $statMembreMixte[statMembreId].statmembres_senior}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+		</td>
+		<td>
+			<{if $statMembreSimple[statMembreId].statmembres_veteran}>
+				<a style="color:red; font-weight:bold;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>&amp;cat=Veteran">
+			<{else}>
+				<span style="color:red;">
+			<{/if}>
+
+				<{$statMembreSimple[statMembreId].statmembres_veteran}>
+
+			<{if $statMembreSimple[statMembreId].statmembres_veteran}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreDouble[statMembreId].statmembres_veteran}>
+				<a style="color:green; font-weight:bold;" href="membre-class-double.php?class=<{$statMembreDouble[statMembreId].statmembres_cat}>&amp;cat=Veteran">
+			<{else}>
+				<span style="color:green;">
+			<{/if}>
+
+				<{$statMembreDouble[statMembreId].statmembres_veteran}>
+
+			<{if $statMembreDouble[statMembreId].statmembres_veteran}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+
+
+			<{if $statMembreMixte[statMembreId].statmembres_veteran}>
+				<a style="color:blue; font-weight:bold;" href="membre-class-mixte.php?class=<{$statMembreMixte[statMembreId].statmembres_cat}>&amp;cat=Veteran">
+			<{else}>
+				<span style="color:blue;">
+			<{/if}>
+
+				<{$statMembreMixte[statMembreId].statmembres_veteran}>
+
+			<{if $statMembreMixte[statMembreId].statmembres_veteran}>
+				</a>
+			<{else}>
+				</span>
+			<{/if}>
+		</td>
+		<th style="text-align:center;">
+			<a style="color:red;" href="membre-class-simple.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>"><{$statMembreSimple[statMembreId].stat}></a>
+			<a style="color:green;" href="membre-class-double.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>"><{$statMembreDouble[statMembreId].stat}></a>
+			<a style="color:blue;" href="membre-class-mixte.php?class=<{$statMembreSimple[statMembreId].statmembres_cat}>"><{$statMembreMixte[statMembreId].stat}></a>
+		</th>
+	</tr>
+	<{/section}>
+	<tr>
+		<th style="text-align:center;">Total</th>
+		<th style="text-align:center;"><{$statMembreAge.statmembres_poussin}></th>
+		<th style="text-align:center;"><{$statMembreAge.statmembres_benjamin}></th>
+		<th style="text-align:center;"><{$statMembreAge.statmembres_minime}></th>
+		<th style="text-align:center;"><{$statMembreAge.statmembres_cadet}></th>
+		<th style="text-align:center;"><{$statMembreAge.statmembres_junior}></th>
+		<th style="text-align:center;"><{$statMembreAge.statmembres_senior}></th>
+		<th style="text-align:center;"><{$statMembreAge.statmembres_veteran}></th>
+		<th></th>
+	</tr>
+</table>

@@ -1,0 +1,16 @@
+<table class="outer" style="text-align:center;">
+	<tr style="vertical-align:middle;">
+		<th>PHOTO</th>
+		<th>NOM</th>
+		<th>FONCTION</th>
+		<th>SEXE</th>
+	</tr>
+	<{foreachq item=membre from=$membres}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td><img src="<{$xoops_url}>/uploads/club/joueurs/<{if $membre.membre_photo}><{$membre.membre_licence}><{else}>00000000<{/if}>.gif" alt="<{$membre.membre_prenom}> <{$membre.membre_nom}>" title="<{$membre.membre_prenom}> <{$membre.membre_nom}>" /></td>
+		<td style="vertical-align:middle;"><{if !$membre.membre_nolicence}><a href="detail-membre.php?id=<{$membre.membre_licence}>"><{/if}><{$membre.membre_prenom}> <{$membre.membre_nom}><{if !$membre.membre_nolicence}></a><{/if}></td>
+		<td style="vertical-align:middle;"><{$membre.fonction_nom}></td>
+		<td style="vertical-align:middle;"><img src="<{$xoops_url}>/modules/club/images/<{$membre.membre_sexe}>.gif" alt="Genre : Masculin ou Féminin" /></td>
+	</tr>
+	<{/foreach}>
+</table>

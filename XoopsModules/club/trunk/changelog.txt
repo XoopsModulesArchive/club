@@ -1,0 +1,40 @@
+============================
+2008/26/12: Version 1.0.7
+============================
+
+- Modification du menu d'admin pour XOOPS 2.3
+- Ajout du lien vers BadNuke
+- Modification d'un bug dans la selection des membres pour l'envoi des mail
+
+============================
+2008/05/10: Version 1.0.6
+============================
+
+- La remise a zéro des membres du club et l'ajout des nouveau et maintenant éffectué dés qu'aumoins un nouveau membre est visible dans poona
+
+============================
+2008/21/09: Version 1.0.5
+============================
+
+- Modification template detail-tournoi.php
+- Ajout de date limite pour les inscriptions aux tournois
+
+============================
+2008/31/07: Version 1.0.4
+============================
+
+- Ajout de la gestion des tournois
+- Ajout de la gestion des palmares
+- Les anniversaires sont triés par jour d'arrivé
+- La table membre_saison est renseigné que d'octobre à juillet
+- TODO : graphique stat non affiché car non généré
+
+============================
+2008/12/06: Version 1.0.3
+============================
+
+- Modification de l'intitulé de l'expediteur dans le formulaire d'envoi de mail
+- Ajout d'une fonction de renvoie des identifiants de connection
+- Ajout de la gestion des membres non licenciés
+- Ajout de la moyenne de descente
+- Prise en compte du réglement pour le calcul des classements virtuels

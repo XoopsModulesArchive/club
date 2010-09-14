@@ -1,0 +1,16 @@
+<table style="width:100%; font-size:0.8em;">
+	<{if $block.haveAnniv}>
+	<{foreachq item=membre from=$block.membres}>
+	<tr>
+		<td><{if !$membre.membre_nolicence}><a href="<{$xoops_url}>/modules/club/detail-membre.php?id=<{$membre.membre_licence}>"><{/if}><{$membre.membre_prenom}> <{$membre.membre_nom}><{if !$membre.membre_nolicence}></a><{/if}></td>
+	</tr>
+	<tr>
+		<td><b><{$membre.membre_age}> ans</b>, le <{$membre.membre_birth_jour}>/<{$membre.membre_birth_mois}></td>
+	</tr>
+	<{/foreach}>
+	<{else}>
+	<tr>
+		<td>Pas d'anniversaire aujourd'hui</td>
+	</tr>
+	<{/if}>
+</table>

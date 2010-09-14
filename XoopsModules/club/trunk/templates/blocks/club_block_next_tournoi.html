@@ -1,0 +1,13 @@
+<table style="width:100%; font-size:0.8em;">
+	<{foreachq item=tournoi from=$block}>
+	<tr>
+		<td>
+			<a href="<{$xoops_url}>/modules/club/detail-tournoi.php?id=<{$tournoi.tournoi_id}>" title="<{$tournoi.tournoi_desc}>">
+				<{$tournoi.tournoi_name}>
+			</a><br />
+			<{$tournoi.formated_date}><br />
+			Inscription avant le <b><{$tournoi.formated_inscr_date}></b>
+		</td>
+	</tr>
+	<{/foreach}>
+</table>
