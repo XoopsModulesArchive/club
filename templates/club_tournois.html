@@ -1,0 +1,12 @@
+<table class="outer" style="text-align:center;">
+	<tr>
+		<th>TOURNOI</th>
+		<th>DATE</th>
+	</tr>
+	<{foreachq item=tournoi from=$tournois}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td><a href="detail-tournoi.php?id=<{$tournoi.tournoi_id}>"><{$tournoi.tournoi_name}></a></td>
+		<td><{$tournoi.formated_date}></td>
+	</tr>
+	<{/foreach}>
+</table>

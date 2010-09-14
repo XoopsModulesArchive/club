@@ -1,0 +1,100 @@
+<table class="outer">
+	<tr>
+		<th colspan="2"><{$tournoi.tournoi_name}></th>
+	</tr>
+	<tr class="even">
+		<td style="width:50%;"><{$tournoi.tournoi_desc}></td>
+		<td><{$tournoi.formated_date}></td>
+	</tr>
+	<tr class="odd">
+		<td colspan="2">
+			<b>Participants au tournoi :</b><br /><br />
+			<{foreachq item=membre from=$membres}>
+			<a href="detail-membre.php?id=<{$membre.membre.membre_licence}>">
+				<{$membre.membre.membre_prenom}> <{$membre.membre.membre_nom}>
+			</a>
+			<{if $membre.membretournoi_is_simple}>
+				en <b>simple <{$membre.membretournoi_s_serie}></b> 
+			<{/if}>
+			<{if $membre.membretournoi_is_double}>
+				<{if $membre.membretournoi_is_simple}>et <{/if}>en <b>double <{$membre.membretournoi_d_serie}></b> avec 
+				<{if $membre.membretournoi_d_partenaire}>
+				<a href="detail-membre.php?id=<{$membre.part_double.membre_licence}>">
+					<{$membre.part_double.membre_prenom}> <{$membre.part_double.membre_nom}>
+				</a>
+				<{else}>
+					X
+				<{/if}>
+			<{/if}>
+			<{if $membre.membretournoi_is_mixte}>
+				<{if $membre.membretournoi_is_simple || $membre.membretournoi_is_double}>et <{/if}>en <b>mixte <{$membre.membretournoi_m_serie}></b> avec 
+				<{if $membre.membretournoi_m_partenaire}>
+				<a href="detail-membre.php?id=<{$membre.part_mixte.membre_licence}>">
+					<{$membre.part_mixte.membre_prenom}> <{$membre.part_mixte.membre_nom}>
+				</a>
+				<{else}>
+					X
+				<{/if}>
+			<{/if}>
+			<br />
+			<{/foreach}>
+		</td>
+	</tr>
+	<tr class="even">
+		<td colspan="2">
+			<{if $pastTournoi}>
+				<b>Palmares des membes du club pour ce tournoi :</b><br /><br />
+				<{foreachq item=membre from=$palmares}>
+				<a href="detail-membre.php?id=<{$membre.membre.membre_licence}>">
+					<{$membre.membre.membre_prenom}> <{$membre.membre.membre_nom}> 
+				</a> :
+				<{if $membre.palmares_s}>
+					<{if $membre.palmares_s == -1}>
+					<b>Gagne</b> en <b>simple <{$membre.membretournoi_s_serie}></b>
+					<{elseif $membre.palmares_s == 1}>
+					<b>Finaliste</b> en <b>simple <{$membre.membretournoi_s_serie}></b>
+					<{else}>
+					<b>1/<{$membre.palmares_s}></b> en <b>simple <{$membre.membretournoi_s_serie}></b>
+					<{/if}>
+				<{/if}>
+				<{if $membre.palmares_d}>
+					<{if $membre.palmares_s}>
+					 et 
+					<{/if}>
+					<{if $membre.palmares_d == -1}>
+					<b>gagne</b> en <b>double <{$membre.membretournoi_d_serie}></b>
+					<{elseif $membre.palmares_d == 1}>
+					<b>Finaliste</b> en <b>double <{$membre.membretournoi_d_serie}></b>
+					<{else}>
+					<b>1/<{$membre.palmares_d}></b> en <b>double <{$membre.membretournoi_d_serie}></b>
+					<{/if}>
+				<{/if}>
+				<{if $membre.palmares_m}>
+					<{if $membre.palmares_s || $membre.palmares_d}>
+					 et 
+					<{/if}>
+					<{if $membre.palmares_m == -1}>
+					gagne en mixte <{$membre.membretournoi_m_serie}>
+					<{elseif $membre.palmares_m == 1}>
+					<b>Finaliste</b> en <b>mixte <{$membre.membretournoi_m_serie}></b>
+					<{else}>
+					<b>1/<{$membre.palmares_m}></b> en <b>mixte <{$membre.membretournoi_m_serie}></b>
+					<{/if}>
+				<{/if}>
+				<br />
+				<{/foreach}>
+			<{else}>
+				<{if $canSubscribe}>
+				Mon inscription à ce tournoi :<br /><br />
+				<form action="<{$addMembreTournoi.action}>" method="<{$addMembreTournoi.method}>">
+				<{foreachq item=element from=$addMembreTournoi.elements}>
+					<{$element.caption}> <{$element.body}>
+				<{/foreach}>
+				</form>
+				<{else}>
+					<{$canSubscribeMess}>
+				<{/if}>
+			<{/if}>
+		</td>
+	</tr>
+</table>

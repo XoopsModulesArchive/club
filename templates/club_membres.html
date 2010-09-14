@@ -1,0 +1,48 @@
+Le club compte actuellement <b><{$nbMembres}></b> adhérents.
+<br /><br />
+<{if $nbMembres > $limit}>
+<p style="text-align:center;">
+[ <a href="membres.php?list=A"<{if $lettreSelect == 'A'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.A}> membres">A</a> |
+<a href="membres.php?list=B"<{if $lettreSelect == 'B'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.B}> membres">B</a> |
+<a href="membres.php?list=C"<{if $lettreSelect == 'C'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.C}> membres">C</a> |
+<a href="membres.php?list=D"<{if $lettreSelect == 'D'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.D}> membres">D</a> |
+<a href="membres.php?list=E"<{if $lettreSelect == 'E'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.E}> membres">E</a> |
+<a href="membres.php?list=F"<{if $lettreSelect == 'F'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.F}> membres">F</a> |
+<a href="membres.php?list=G"<{if $lettreSelect == 'G'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.G}> membres">G</a> |
+<a href="membres.php?list=H"<{if $lettreSelect == 'H'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.H}> membres">H</a> |
+<a href="membres.php?list=I"<{if $lettreSelect == 'I'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.I}> membres">I</a> |
+<a href="membres.php?list=J"<{if $lettreSelect == 'J'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.J}> membres">J</a> |
+<a href="membres.php?list=K"<{if $lettreSelect == 'K'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.K}> membres">K</a> |
+<a href="membres.php?list=L"<{if $lettreSelect == 'L'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.L}> membres">L</a> |
+<a href="membres.php?list=M"<{if $lettreSelect == 'M'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.M}> membres">M</a> |
+<a href="membres.php?list=N"<{if $lettreSelect == 'N'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.N}> membres">N</a> |
+<a href="membres.php?list=O"<{if $lettreSelect == 'O'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.O}> membres">O</a> |
+<a href="membres.php?list=P"<{if $lettreSelect == 'P'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.P}> membres">P</a> |
+<a href="membres.php?list=Q"<{if $lettreSelect == 'Q'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.Q}> membres">Q</a> |
+<a href="membres.php?list=R"<{if $lettreSelect == 'R'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.R}> membres">R</a> |
+<a href="membres.php?list=S"<{if $lettreSelect == 'S'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.S}> membres">S</a> |
+<a href="membres.php?list=T"<{if $lettreSelect == 'T'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.T}> membres">T</a> |
+<a href="membres.php?list=U"<{if $lettreSelect == 'U'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.U}> membres">U</a> |
+<a href="membres.php?list=V"<{if $lettreSelect == 'V'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.V}> membres">V</a> |
+<a href="membres.php?list=W"<{if $lettreSelect == 'W'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.W}> membres">W</a> |
+<a href="membres.php?list=X"<{if $lettreSelect == 'X'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.X}> membres">X</a> |
+<a href="membres.php?list=Y"<{if $lettreSelect == 'Y'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.Y}> membres">Y</a> |
+<a href="membres.php?list=Z"<{if $lettreSelect == 'Z'}>style="color:red; font-weight: bold;"<{/if}> title="<{$nbMembresAlpha.Z}> membres">Z</a> ]
+</p>
+<{/if}>
+<table class="outer" style="text-align:center;">
+	<tr>
+		<th>PHOTO</th>
+		<th>NOM</th>
+		<th>CATEGORIE</th>
+		<th>SEXE</th>
+	</tr>
+	<{foreachq item=membre from=$membres}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td><img src="<{$xoops_url}>/uploads/club/joueurs/<{if $membre.membre_photo}><{$membre.membre_licence}><{else}>00000000<{/if}>.gif" alt="<{$membre.membre_prenom}> <{$membre.membre_nom}>" title="<{$membre.membre_prenom}> <{$membre.membre_nom}>" /></td>
+		<td style="vertical-align:middle;"><a href="detail-membre.php?id=<{$membre.membre_licence}>" class="clubTips" title="Classement" rel="<{$membre.membre_class_s}> / <{$membre.membre_class_d}> / <{$membre.membre_class_m}>"><{$membre.membre_prenom}> <{$membre.membre_nom}></a></td>
+		<td style="vertical-align:middle;"><img src="<{$xoops_url}>/modules/club/images/<{$membre.membre_categorie}>.gif" alt="Categorie d'age" /></td>
+		<td style="vertical-align:middle;"><img src="<{$xoops_url}>/modules/club/images/<{$membre.membre_sexe}>.gif" alt="Genre : Masculin ou Féminin" /></td>
+	</tr>
+	<{/foreach}>
+</table>

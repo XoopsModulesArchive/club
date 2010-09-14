@@ -1,0 +1,44 @@
+<table style="width:100%; font-size:0.8em;">
+	<{foreachq item=palmares from=$block}>
+	<tr class="<{cycle values="even,odd"}>">
+		<td style="vertical-align:middle;"><a href="<{$xoops_url}>/modules/club/detail-tournoi.php?id=<{$palmares.tournoi_id}>"><{$palmares.tournoi_name}></a></td>
+		<td>
+			<a href="<{$xoops_url}>/modules/club/detail-membre.php?id=<{$palmares.membre_licence}>"><{$palmares.membre_prenom}> <{$palmares.membre_nom}></a><br />
+			<{if $palmares.palmares_s}>
+				<{if $palmares.palmares_s == -1}>
+				<b>Gagne</b> en <b>simple <{$palmares.membretournoi_s_serie}></b>
+				<{elseif $palmares.palmares_s == 1}>
+				<b>Finaliste</b> en <b>simple <{$palmares.membretournoi_s_serie}></b>
+				<{else}>
+				<b>1/<{$palmares.palmares_s}></b> en <b>simple <{$palmares.membretournoi_s_serie}></b>
+				<{/if}>
+			<{/if}>
+			<{if $palmares.palmares_d}>
+				<{if $palmares.palmares_s}>
+				 et 
+				<{/if}>
+				<{if $palmares.palmares_d == -1}>
+				<b>gagne</b> en <b>double <{$palmares.membretournoi_d_serie}></b>
+				<{elseif $palmares.palmares_d == 1}>
+				<b>Finaliste</b> en <b>double <{$palmares.membretournoi_d_serie}></b>
+				<{else}>
+				<b>1/<{$palmares.palmares_d}></b> en <b>double <{$palmares.membretournoi_d_serie}></b>
+				<{/if}>
+			<{/if}>
+			<{if $palmares.palmares_m}>
+				<{if $palmares.palmares_s || $palmares.palmares_d}>
+				 et 
+				<{/if}>
+				<{if $palmares.palmares_m == -1}>
+				<b>gagne</b> en <b>mixte <{$palmares.membretournoi_m_serie}></b>
+				<{elseif $palmares.palmares_m == 1}>
+				<b>Finaliste</b> en <b>mixte <{$palmares.membretournoi_m_serie}></b>
+				<{else}>
+				<b>1/<{$palmares.palmares_m}></b> en <b>mixte <{$palmares.membretournoi_m_serie}></b>
+				<{/if}>
+			<{/if}>
+		</td>
+	</tr>
+	</tr>
+	<{/foreach}>
+</table>
