@@ -18,7 +18,7 @@
  * @author      Andrew Morton <drewish@katherinehouse.com>
  * @copyright   2003-2005 The PHP Group
  * @license     http://www.php.net/license/3_0.txt  PHP License 3.0
- * @version     CVS: $Id: Color.php,v 1.15 2005/09/12 19:12:02 drewish Exp $
+ * @version     CVS: $Id$
  * @link        http://pear.php.net/package/Image_Color
  */
 

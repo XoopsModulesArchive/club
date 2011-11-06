@@ -1,5 +1,5 @@
 <?php
-// $Id: xoopsmailer.php 797 2006-11-08 02:21:38Z skalpa $
+// $Id$
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
