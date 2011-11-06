@@ -1,5 +1,5 @@
 <?php
-// $Id: cp_functions.php 1074 2007-10-11 15:21:11Z phppp $
+// $Id$
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //

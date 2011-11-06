@@ -1,5 +1,5 @@
 <?php
-// $Id: index.php,v 1.19 2005/09/02 07:05:47 zoullou Exp $
+// $Id$
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
