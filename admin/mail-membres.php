@@ -33,7 +33,7 @@ switch($op) {
 
 				if(isset($_POST['mail_to_users'])) {
 
-					$myts =& MyTextSanitizer::getInstance();
+					$myts = MyTextSanitizer::getInstance();
 					$userHandler = xoops_gethandler('user');
 					$membreHandler = xoops_getmodulehandler('membre', 'club');
 
